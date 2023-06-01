@@ -16,11 +16,11 @@ This is the PyTorch implementation of SplitGNN: Spectral Graph Neural Network fo
   - ```YelpChi.zip```: The original dataset of YelpChi, which contains hotel and restaurant reviews filtered (spam) and recommended (legitimate) by Yelp.
   - ```Amazon.zip```: The original dataset of Amazon, which contains product reviews under the Musical Instruments category.
   - ```FDCompCN.zip```: The processed dataset of FDCompCN, which contains financial statement fraud of companies in China from CSMAR database.
-- ```config```: includes the setting of parameters for two datasets.
+- ```config/```: includes the setting of parameters for two datasets.
   - ```yelp.yaml```: The general parameters of YelpChi.
   - ```amazon.yaml```: The general parameters of Amazon.
   - ```comp.yaml```: The general parameters of FDCompCN.
-- ```result```: includes the results of models.
+- ```result/```: includes the results of models.
 
 # Model Training
 
@@ -50,7 +50,7 @@ python train.py --dataset yelp
 
 A new fraud detection dataset **FDCompCN** for detecting financial statement fraud of companies in China. We construct a multi-relation graph based on the supplier, customer, shareholder, and financial information disclosed in the financial statements of Chinese companies. These data are obtained from the China Stock Market and Accounting Research (CSMAR) database. We select samples between 2020 and 2023, including 5,317 publicly listed Chinese companies traded on the Shanghai, Shenzhen, and Beijing Stock Exchanges.
 
-**FDCompCN **has three relations:
+**FDCompCN** has three relations:
 
 1) C-I-C that connects companies that have investment relationships.
 2) C-P-C that connects companies and their disclosed customers. 
