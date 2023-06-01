@@ -1,0 +1,20 @@
+# train parameters
+dataset: 'comp'
+seed: 30
+epoch: 1000
+early_stop: 100
+lr: 0.001
+weight_decay: 0.00005
+cuda: 0
+log: True
+data_path: '../data/'
+result_path: '../result/'
+
+
+# model parameters
+gamma: 1
+C: 1
+K: 0
+intra_dim: 8
+n_class: 2
+dropout: 0.1
