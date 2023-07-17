@@ -6,6 +6,10 @@ This is the PyTorch implementation of SplitGNN: Spectral Graph Neural Network fo
 
 # Dependencies
 
+- Python >= 3.8
+- numpy >= 1.22.4
+- scipy >= 1.4.1
+- scikit-learn >= 1.1.2
 - [PyTorch](https://pytorch.org/) >= 1.11.0
 - [DGL](https://www.dgl.ai/) >= 0.9.1
 
@@ -57,3 +61,29 @@ A new fraud detection dataset **FDCompCN** for detecting financial statement fra
 3) C-S-C that connects companies and their disclosed suppliers. 
 
 Each company contains basic and financial statement information. The basic information includes registered capital, currency, operating status, company type, industry, city, personnel size, and the number of insured individuals. The financial statement information includes such as long-term accounts receivable, long-term liabilities, and total assets. The original financial statement information contains 149 indicators. We retain 49 financial indicators. Finally, we process the basic information and financial statement information into 57-dimensional features. Financial statement fraud includes seven types of violations disclosed by Chinese regulators, including inflated profits, inflated assets, false statements, delay in disclosure, omission of significant information, fraudulent disclosures, and general accounting irregularities. Companies with more than three violations are labeled as fraudulent samples, while other companies are labeled as benign. 559 fraud samples and 4758 benign samples are ultimately obtained, with fraud samples accounting for 10.51%.
+
+# Reproduce Results
+
+The hyperparameter of SplitGNN to reproduce the results.
+
+| Paramater     | YelpChi    | Amazon  | FDCompCN  |
+| ------------- | ------- | ------- | ------- |
+| learning rate | 0.01    | 0.1    | 0.001    |
+| weight decay  | 0.00005 | 0.00005 | 0.00005 |
+| gamma         | 0.6     | 0.4     | 0.8     |
+| n\_hidden     | 8       | 8       | 8       |
+| order C     | 2       | 2       | 3       |
+| tunable K       | 1       | 1      | 2       |
+| dropout       | 0.1     | 0.1     | 0.1     |
+| max epoch     | 1000    | 1000    | 1000    |
+| early stop    | 100     | 50      | 100      |
+
+# Run on your Datasets
+
+To run SplitGNN on your datasets, you need to prepare the following data:
+
+- A homogeneous or multi-relation  graph
+- Node labels
+- Node features
+
+Transform the data into DGL format using the code in data_preprocess.py as a reference.
