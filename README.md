@@ -1,6 +1,10 @@
 # SplitGNN
 
-This is the PyTorch implementation of SplitGNN: Spectral Graph Neural Network for Fraud Detection against Heterophily.
+This is the PyTorch implementation for the [CIKM 2023 paper](https://dl.acm.org/doi/10.1145/3583780.3615067):
+
+**SplitGNN: Spectral Graph Neural Network for Fraud Detection against Heterophily**
+
+Bin Wu, Xinyu Yao, Boyan Zhang, Kuo-Ming Chao, Yinsheng Li
 
 ![model](./model.png)
 
@@ -87,3 +91,16 @@ To run SplitGNN on your datasets, you need to prepare the following data:
 - Node features
 
 Transform the data into DGL format using the code in data_preprocess.py as a reference.
+
+# Citation
+Please cite the paper if you use our code or data.
+```bibtex
+@inproceedings{10.1145/3583780.3615067,
+  author = {Wu, Bin and Yao, Xinyu and Zhang, Boyan and Chao, Kuo-Ming and Li, Yinsheng},
+  title = {SplitGNN: Spectral Graph Neural Network for Fraud Detection against Heterophily},
+  year = {2023},
+  url = {https://doi.org/10.1145/3583780.3615067},
+  booktitle = {Proceedings of the 32nd ACM International Conference on Information and Knowledge Management},
+  series = {CIKM '23}
+}
+```
